@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">中维欢迎您</string>
+    <string name="app_name">中维商城</string>
+    <string name="net_tip">无网络连接，请打开您的网络连接</string>
+    <string name="toast_search">正在搜索…</string>
+    <string name="login_hint">用户名/手机号/邮箱</string>
+    <string name="password_hint">请输入密码</string>
+    <string name="login">登陆</string>
+    <string name="register">注册</string>
+</resources>

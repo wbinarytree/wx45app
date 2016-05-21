@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- From: file:/Users/phoenix/Documents/wx45app/res/values/strings.xml -->
+    <eat-comment />
+
+    <string name="app_name">中维商城</string>
+    <string name="hello">中维欢迎您</string>
+    <string name="login_hint">请输入用户名</string>
+    <string name="net_tip">无网络连接，请打开您的网络连接</string>
+    <string name="password_hint">请输入密码</string>
+    <string name="toast_search">正在搜索…</string>
+
+</resources>

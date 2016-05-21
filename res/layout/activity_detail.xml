@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#1E90FF" >
+
+        <TextView
+            android:id="@+id/tv_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="3dp"
+            android:textColor="#FFFFFF"
+            android:textSize="18dp"
+            android:text="TextView" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp" >
+
+        <ImageView
+            android:id="@+id/im_goods"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:maxWidth="150dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/temp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="0.88"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <ImageView
+                    android:id="@+id/goods_st"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/goods_have" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/im_st"
+                    android:src="@drawable/st"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="@drawable/bg_t_new"
+        android:layout_height="50dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+    >
+
+        <TextView
+            android:id="@+id/tv_express"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/tv_prise"
+            android:layout_toRightOf="@+id/tv_prise"
+            android:text="1~3日内送达" 
+            android:layout_marginLeft="5dp"
+            android:textColor="#b9b9b9"/>
+
+        <TextView
+           android:id="@+id/tv_prise_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:text="价格:"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_prise"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/tv_prise_label"
+            android:layout_alignBottom="@+id/tv_prise_label"
+            android:layout_toRightOf="@+id/tv_prise_label"
+            android:text="￥999.999"
+            android:textColor="#fb5a22"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+        <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:background="@drawable/bg_t_new"
+        android:layout_height="50dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+    >
+
+            <ImageButton
+                android:id="@+id/ib_dail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/dail_detail_icon"
+                android:layout_marginLeft="5dp"
+                android:background="@android:color/transparent"
+                 />
+
+            <Button
+                android:id="@+id/dail"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@+id/ib_dail"
+                android:background="@android:color/transparent"
+                android:gravity="center_vertical"
+                android:text="点击拨打热线订购:400-800-0264"
+                android:textSize="15dp" />
+
+        </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="2dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/bg_detail_n" >
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft = "15dp"
+             android:layout_marginTop="3dp"
+             android:layout_marginBottom="3dp"
+            android:text="详细描述"
+            android:textSize="18sp"
+            android:textStyle="bold"
+             />
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#b9b9b9"
+            android:stretchColumns="*" >
+        </TableLayout>
+
+        <ListView
+            android:id="@+id/android:list"
+            android:background="@android:color/transparent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:footerDividersEnabled="false"
+            android:headerDividersEnabled="false" >
+        </ListView>
+
+        <TextView
+            android:id="@+id/android:empty"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="暂无简介"
+            android:textSize="15sp"
+           
+
+             />
+
+    </LinearLayout>
+</LinearLayout>

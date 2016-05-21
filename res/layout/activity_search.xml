@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/tv_test_iconlist"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:gravity="center"
+        android:textSize="18dp"
+        android:background="#FFFF00"
+        android:visibility="gone"/>
+
+	<RelativeLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="50dp"
+	    android:background="#007FFF" >
+
+	<EditText
+	    android:id="@+id/edSearchKey"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+        android:ems="10"
+	    android:hint="请输入搜索信息"
+	    android:textColor="#FFFFFF"
+	    android:textColorHint="#FFFFFF"
+	    android:singleLine="true"
+        android:inputType="text"
+        android:layout_marginLeft="9dp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_toLeftOf="@+id/btnSearch" />
+
+	<ImageButton
+	    android:layout_margin="10dp"
+	    android:id="@+id/btnSearch"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_alignParentRight="true"
+	    android:layout_centerVertical="true"
+	    
+	    android:hint="搜索" 
+	    android:src = "@drawable/abs__ic_search"
+	    android:background="@android:color/transparent"/>
+	    
+	</RelativeLayout>
+
+    <ListView
+        android:id="@+id/android:list"
+        
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+    </ListView>
+
+ </LinearLayout>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="2" >
+
+    <dataSet config="main" >
+        <source path="/Users/phoenix/Documents/wx45app/assets" />
+    </dataSet>
+    <dataSet config="debug" >
+        <source path="/Users/phoenix/Documents/wx45app/build-types/debug/assets" />
+    </dataSet>
+
+</merger>

@@ -1,0 +1,25 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/bg_t_50x50">
+
+    <TextView
+        android:id="@+id/title_detail"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="1px"
+        android:text="TextView" 
+       	android:textColor="#000000"
+       	android:background="#78003cff"
+       	/>
+
+    <TextView
+        android:id="@+id/text_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="wrap_contentwrap_contentwrap_contentwrap_contentwrap_contentwrap_contentwrap_content"
+        android:layout_margin="1px"
+        android:textColor="#000000"/>
+
+</LinearLayout><!-- From: file:/Users/phoenix/Documents/wx45app/res/layout/list_detail.xml -->

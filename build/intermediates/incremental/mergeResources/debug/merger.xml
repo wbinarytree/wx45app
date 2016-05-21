@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="2" >
+
+    <dataSet config="main" >
+        <source path="/Users/phoenix/Documents/wx45app/res" >
+            <file
+                name="icon"
+                path="/Users/phoenix/Documents/wx45app/res/drawable-hdpi/icon.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="icon"
+                path="/Users/phoenix/Documents/wx45app/res/drawable-ldpi/icon.png"
+                qualifiers="ldpi-v4"
+                type="drawable" />
+            <file
+                name="icon"
+                path="/Users/phoenix/Documents/wx45app/res/drawable-mdpi/icon.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
+                name="abs__ic_search"
+                path="/Users/phoenix/Documents/wx45app/res/drawable-xhdpi/abs__ic_search.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="abs__ic_search_api_holo_light"
+                path="/Users/phoenix/Documents/wx45app/res/drawable-xhdpi/abs__ic_search_api_holo_light.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="bg_color_blue"
+                path="/Users/phoenix/Documents/wx45app/res/drawable-xhdpi/bg_color_blue.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="bg_detail"
+                path="/Users/phoenix/Documents/wx45app/res/drawable-xhdpi/bg_detail.9.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="bg_detail_n"
+                path="/Users/phoenix/Documents/wx45app/res/drawable-xhdpi/bg_detail_n.9.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="bg_index"
+                path="/Users/phoenix/Documents/wx45app/res/drawable-xhdpi/bg_index.9.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="bg_index_focus"
+                path="/Users/phoenix/Documents/wx45app/res/drawable-xhdpi/bg_index_focus.9.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="bg_index_normal"
+                path="/Users/phoenix/Documents/wx45app/res/drawable-xhdpi/bg_index_normal.9.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="bg_search"
+                path="/Users/phoenix/Documents/wx45app/res/drawable-xhdpi/bg_search.9.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="bg_t"
+                path="/Users/phoenix/Documents/wx45app/res/drawable-xhdpi/bg_t.9.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="bg_t_50x50"
+                path="/Users/phoenix/Documents/wx45app/res/drawable-xhdpi/bg_t_50x50.9.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="bg_t_new"
+                path="/Users/phoenix/Documents/wx45app/res/drawable-xhdpi/bg_t_new.9.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="btm"
+                path="/Users/phoenix/Documents/wx45app/res/drawable-xhdpi/btm.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="dail_detail"
+                path="/Users/phoenix/Documents/wx45app/res/drawable-xhdpi/dail_detail.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="dail_detail_icon"
+                path="/Users/phoenix/Documents/wx45app/res/drawable-xhdpi/dail_detail_icon.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="dail_icon_index"
+                path="/Users/phoenix/Documents/wx45app/res/drawable-xhdpi/dail_icon_index.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="dail_index_icon"
+                path="/Users/phoenix/Documents/wx45app/res/drawable-xhdpi/dail_index_icon.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="dail_index_icon_new"
+                path="/Users/phoenix/Documents/wx45app/res/drawable-xhdpi/dail_index_icon_new.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="dail_normal"
+                path="/Users/phoenix/Documents/wx45app/res/drawable-xhdpi/dail_normal.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="dail_pressed"
+                path="/Users/phoenix/Documents/wx45app/res/drawable-xhdpi/dail_pressed.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="detail_have"
+                path="/Users/phoenix/Documents/wx45app/res/drawable-xhdpi/detail_have.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="detail_lack"
+                path="/Users/phoenix/Documents/wx45app/res/drawable-xhdpi/detail_lack.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="good_h"
+                path="/Users/phoenix/Documents/wx45app/res/drawable-xhdpi/good_h.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="good_h_new"
+                path="/Users/phoenix/Documents/wx45app/res/drawable-xhdpi/good_h_new.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="good_l"
+                path="/Users/phoenix/Documents/wx45app/res/drawable-xhdpi/good_l.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="goods_have"
+                path="/Users/phoenix/Documents/wx45app/res/drawable-xhdpi/goods_have.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="goods_lack"
+                path="/Users/phoenix/Documents/wx45app/res/drawable-xhdpi/goods_lack.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="image"
+                path="/Users/phoenix/Documents/wx45app/res/drawable-xhdpi/image.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="public_1"
+                path="/Users/phoenix/Documents/wx45app/res/drawable-xhdpi/public_1.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="public_2"
+                path="/Users/phoenix/Documents/wx45app/res/drawable-xhdpi/public_2.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="public_3"
+                path="/Users/phoenix/Documents/wx45app/res/drawable-xhdpi/public_3.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="r_button"
+                path="/Users/phoenix/Documents/wx45app/res/drawable-xhdpi/r_button.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="search"
+                path="/Users/phoenix/Documents/wx45app/res/drawable-xhdpi/search.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="search_button"
+                path="/Users/phoenix/Documents/wx45app/res/drawable-xhdpi/search_button.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="search_index_icon"
+                path="/Users/phoenix/Documents/wx45app/res/drawable-xhdpi/search_index_icon.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="searh"
+                path="/Users/phoenix/Documents/wx45app/res/drawable-xhdpi/searh.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="selecotr_button_index"
+                path="/Users/phoenix/Documents/wx45app/res/drawable-xhdpi/selecotr_button_index.xml"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="selecotr_dail"
+                path="/Users/phoenix/Documents/wx45app/res/drawable-xhdpi/selecotr_dail.xml"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="selector_list"
+                path="/Users/phoenix/Documents/wx45app/res/drawable-xhdpi/selector_list.xml"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="shape"
+                path="/Users/phoenix/Documents/wx45app/res/drawable-xhdpi/shape.xml"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="st"
+                path="/Users/phoenix/Documents/wx45app/res/drawable-xhdpi/st.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="st_d"
+                path="/Users/phoenix/Documents/wx45app/res/drawable-xhdpi/st_d.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="teleicon"
+                path="/Users/phoenix/Documents/wx45app/res/drawable-xhdpi/teleicon.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="temp"
+                path="/Users/phoenix/Documents/wx45app/res/drawable-xhdpi/temp.9.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="text_label"
+                path="/Users/phoenix/Documents/wx45app/res/drawable-xhdpi/text_label.9.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="top"
+                path="/Users/phoenix/Documents/wx45app/res/drawable-xhdpi/top.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="activity_detail"
+                path="/Users/phoenix/Documents/wx45app/res/layout/activity_detail.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="activity_login"
+                path="/Users/phoenix/Documents/wx45app/res/layout/activity_login.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="activity_main"
+                path="/Users/phoenix/Documents/wx45app/res/layout/activity_main.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="activity_search"
+                path="/Users/phoenix/Documents/wx45app/res/layout/activity_search.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="activity_welcome"
+                path="/Users/phoenix/Documents/wx45app/res/layout/activity_welcome.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="dialog_search"
+                path="/Users/phoenix/Documents/wx45app/res/layout/dialog_search.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="list"
+                path="/Users/phoenix/Documents/wx45app/res/layout/list.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="list_detail"
+                path="/Users/phoenix/Documents/wx45app/res/layout/list_detail.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="list_public"
+                path="/Users/phoenix/Documents/wx45app/res/layout/list_public.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                path="/Users/phoenix/Documents/wx45app/res/values/strings.xml"
+                qualifiers="" >
+                <string name="hello" >中维欢迎您
+                </string>
+                <string name="password_hint" >请输入密码
+                </string>
+                <string name="toast_search" >正在搜索…
+                </string>
+                <string name="net_tip" >无网络连接，请打开您的网络连接
+                </string>
+                <string name="app_name" >中维商城
+                </string>
+                <string name="login_hint" >请输入用户名
+                </string>
+            </file>
+            <file
+                name="bc_wel"
+                path="/Users/phoenix/Documents/wx45app/res/drawable-xhdpi/bc_wel.jpg"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+        </source>
+        <source path="/Users/phoenix/Documents/wx45app/build/generated/res/rs/debug" />
+        <source path="/Users/phoenix/Documents/wx45app/build/generated/res/generated/debug" />
+    </dataSet>
+    <dataSet config="debug" >
+        <source path="/Users/phoenix/Documents/wx45app/build-types/debug/res" />
+    </dataSet>
+
+</merger>

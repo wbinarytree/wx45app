@@ -1,0 +1,68 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/tv_test"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:gravity="center"
+        android:textSize="18dp"
+        android:background="#FFFF00"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="164dp"
+        android:background="@drawable/top" >
+
+        <Button
+            android:id="@+id/editText1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:background="@drawable/selecotr_button_index"
+            android:hint="在此输入搜索内容"
+            
+            android:textSize="15dp" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_alignBottom="@+id/editText1"
+            android:layout_alignRight="@+id/editText1"
+            android:layout_alignTop="@+id/editText1"
+            android:src="@drawable/search_index_icon" />
+
+        <ImageButton
+            android:id="@+id/imb_dail_index"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/editText1"
+            android:layout_alignLeft="@+id/editText1"
+            android:layout_alignTop="@+id/editText1"
+            android:layout_margin="5dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/dail_icon_index" />
+
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/android:list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+    </ListView>
+
+    </LinearLayout>
+
+<!-- From: file:/Users/phoenix/Documents/wx45app/res/layout/activity_main.xml -->
