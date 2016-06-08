@@ -43,28 +43,28 @@ import android.widget.Toast;
 
 
 /**
- * WX45APP ÉÌÆ·ÏêÇé½çÃæ
+ * WX45APP å•†å“è¯¦æƒ…ç•Œé¢
  * @author Phoenix WANG
- * ÉÌÆ·ÏêÇéĞÅÏ¢ÔÚSearchListActivityÖĞ´ÓHTTP»ñµÃÍ¨¹ıintent´«Èë
+ * å•†å“è¯¦æƒ…ä¿¡æ¯åœ¨SearchListActivityä¸­ä»HTTPè·å¾—é€šè¿‡intentä¼ å…¥
  *
  */
 @SuppressLint("HandlerLeak")
 public class DetailActivity extends ListActivity {
 	
 	/**
-	 * View³ÉÔ±
+	 * Viewæˆå‘˜
 	 * TextView:
-	 * tv_label ÉÌÆ·Ãû³Æ
-	 * tv_prise ÉÌÆ·¼Û¸ñ
-	 * tv_express ËÍ»õÈÕÆÚ
-	 * tv_label_prise ¼Û¸ñ±êÌâ(ÓÃÓÚÉèÖÃÓĞÎŞ¿â´æÊ±±êÇ©²»Í¬)
+	 * tv_label å•†å“åç§°
+	 * tv_prise å•†å“ä»·æ ¼
+	 * tv_express é€è´§æ—¥æœŸ
+	 * tv_label_prise ä»·æ ¼æ ‡é¢˜(ç”¨äºè®¾ç½®æœ‰æ— åº“å­˜æ—¶æ ‡ç­¾ä¸åŒ)
 	 * ImageView:
-	 * iv_product ÉÌÆ·Í¼Æ¬
-	 * iv_stock ¿â´æÓàÁ¿Í¼Æ¬
-	 * iv_new È«ĞÂ/¶şÊÖ
+	 * iv_product å•†å“å›¾ç‰‡
+	 * iv_stock åº“å­˜ä½™é‡å›¾ç‰‡
+	 * iv_new å…¨æ–°/äºŒæ‰‹
 	 * Button:
-	 * ibtm_dail ²¦´òµç»°ImageButton
-	 * btm_dail ÎÄ×Ö°´Å¥
+	 * ibtm_dail æ‹¨æ‰“ç”µè¯ImageButton
+	 * btm_dail æ–‡å­—æŒ‰é’®
 	 */	
 	private TextView tv_label;
 	private TextView tv_prise;
@@ -85,8 +85,8 @@ public class DetailActivity extends ListActivity {
 	
 	private String goodId;
 	
-	private String url = "http://www.wx45.com/json.php?mod=product&act=qrycall&username=uname&telno=";
-//	private final static String url_s = "http://www.wx45.com/json.php?mod=app&act=gettelno&telno=";
+	private String url = "";
+//	private final static String url_s = "";
 	private String url_less = "&proid=";
 	ArrayList<Map<String,Object>> mData= new ArrayList<Map<String,Object>>();	
 	//private Button button ;
@@ -97,18 +97,18 @@ public class DetailActivity extends ListActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		
-		//°ó¶¨²¼¾ÖÎÄ¼ş
+		//ç»‘å®šå¸ƒå±€æ–‡ä»¶
 		setContentView(R.layout.activity_detail);
 		
 		ViewConstruct();
 		
-		//»ñÈ¡Êı¾İÖµ
+		//è·å–æ•°æ®å€¼
 		Intent intent = getIntent();
 		
 		
 		GoodDetailData goodDetailData = (GoodDetailData) intent.getSerializableExtra("goodDetailData");
 		goodId = (String) intent.getSerializableExtra("goodID");
-		//»ñÈ¡ÉÌÆ·ÏêÏ¸ĞÅÏ¢
+		//è·å–å•†å“è¯¦ç»†ä¿¡æ¯
 		String goods_name = goodDetailData.getHashData("goods_name");
 		String shop_price = goodDetailData.getHashData("shop_price");
 		String goods_number = goodDetailData.getHashData("goods_number");
@@ -119,25 +119,25 @@ public class DetailActivity extends ListActivity {
 		
 		imageUrl = "http://www.wx45.com/"+goods_img;
 		
-		//ÉÌÆ·Ãû³Æ,¼Û¸ñ
+		//å•†å“åç§°,ä»·æ ¼
 		tv_label.setText(goods_name);
-		tv_prise.setText("£¤" + shop_price + " Ôª");
+		tv_prise.setText("ï¿¥" + shop_price + " å…ƒ");
 		
-		//ÔËËÍÌìÊı
+		//è¿é€å¤©æ•°
 		if(Integer.valueOf(sday) == 1){
 			if(Integer.valueOf(goods_number) != 0)
-			tv_express.setText("µ±ÈÕ·¢»õ");
+			tv_express.setText("å½“æ—¥å‘è´§");
 			else 
 			tv_express.setVisibility(View.INVISIBLE);			
 		}
 		else{
 			if(Integer.valueOf(goods_number) != 0)
-			tv_express.setText(sday + "ÈÕÄÚ·¢»õ");
+			tv_express.setText(sday + "æ—¥å†…å‘è´§");
 			else 
 			tv_express.setVisibility(View.INVISIBLE);
 		}
 		
-		//ÉÌÆ·ÓĞÎŞ»õ
+		//å•†å“æœ‰æ— è´§
 		if(Integer.valueOf(goods_st) == 10){
 			iv_new.setImageResource(R.drawable.st);
 		}
@@ -145,7 +145,7 @@ public class DetailActivity extends ListActivity {
 			iv_new.setImageResource(R.drawable.st_d);
 		}
 		
-		//ÉÌÆ·Í¼Æ¬
+		//å•†å“å›¾ç‰‡
 		if("".equals(goods_img)){
 			iv_product.setImageResource(R.drawable.temp);
 		}else{
@@ -154,22 +154,22 @@ public class DetailActivity extends ListActivity {
 			thread.start();
 		}
 		
-		//ÉÌÆ·ÎŞ¿â´æ£¬ÉèÖÃÎŞ¿â´æÍ¼Æ¬£¬ÈÈÏßÌáÊ¾£¬¼Û¸ñÌáÊ¾
+		//å•†å“æ— åº“å­˜ï¼Œè®¾ç½®æ— åº“å­˜å›¾ç‰‡ï¼Œçƒ­çº¿æç¤ºï¼Œä»·æ ¼æç¤º
 		if(Integer.valueOf(goods_number) != 0){
-			tv_label_prise.setText("¼Û¸ñ:");
-			btn_dail.setText("µã»÷²¦´òÈÈÏß¶©¹º:400-800-0264");
+			tv_label_prise.setText("ä»·æ ¼:");
+			btn_dail.setText("ç‚¹å‡»æ‹¨æ‰“çƒ­çº¿è®¢è´­:400-800-0264");
 			iv_stock.setImageResource(R.drawable.goods_have);
 		}
 		else{
-			tv_label_prise.setText("²Î¿¼¼Û¸ñ:");
-			btn_dail.setText("µã»÷²¦´òÈÈÏß²éÑ¯:400-800-0264");
+			tv_label_prise.setText("å‚è€ƒä»·æ ¼:");
+			btn_dail.setText("ç‚¹å‡»æ‹¨æ‰“çƒ­çº¿æŸ¥è¯¢:400-800-0264");
 			iv_stock.setImageResource(R.drawable.goods_lack);
 		}
 		
 		HashMap<String, String> goodDecpHashData = goodDetailData
 				.getDespHashTable();
 		
-		//ÉèÖÃ²¦´òµç»°°´Å¥¼àÌı
+		//è®¾ç½®æ‹¨æ‰“ç”µè¯æŒ‰é’®ç›‘å¬
 		btn_dail.setOnClickListener(new OnClickListener() {
 			
 			@Override
@@ -190,7 +190,7 @@ public class DetailActivity extends ListActivity {
 			}
 		});
 		
-		//Ìî³äÉÌÆ·ÏêÇéListView
+		//å¡«å……å•†å“è¯¦æƒ…ListView
 		mData.clear();
 		
 		for (Iterator<String> itr = goodDecpHashData.keySet().iterator(); itr.hasNext();)
@@ -211,7 +211,7 @@ public class DetailActivity extends ListActivity {
 		
 	}
 	
-	//ÉèÖÃÉÌÆ·Í¼Æ¬
+	//è®¾ç½®å•†å“å›¾ç‰‡
 	private Handler handler = new Handler(){
 		
 		public void handleMessage(Message msg){
@@ -239,7 +239,7 @@ public class DetailActivity extends ListActivity {
 		
 	};
 	
-	//³õÊ¼»¯View³ÉÔ±
+	//åˆå§‹åŒ–Viewæˆå‘˜
 	private void ViewConstruct(){
 		
 		mlistview = getListView();
@@ -271,7 +271,7 @@ public class DetailActivity extends ListActivity {
 		{
 			final EditText edit = new EditText(DetailActivity.this);
 			 dialog = new AlertDialog.Builder(DetailActivity.this)
-			.setMessage("ÇëÊäÈëÄúµÄÊÖ»úºÅ·½±ãÎÒÃÇ¸üºÃµÄÎªÄú·şÎñ(ºóĞøÎÒÃÇ»á¶Ô×¢²áÓÃ»§½øĞĞÒ»¶¨³Ì¶ÈµÄÓÅ»İÕş²ß)")
+			.setMessage("è¯·è¾“å…¥æ‚¨çš„æ‰‹æœºå·æ–¹ä¾¿æˆ‘ä»¬æ›´å¥½çš„ä¸ºæ‚¨æœåŠ¡(åç»­æˆ‘ä»¬ä¼šå¯¹æ³¨å†Œç”¨æˆ·è¿›è¡Œä¸€å®šç¨‹åº¦çš„ä¼˜æƒ æ”¿ç­–)")
 			.setOnKeyListener(new OnKeyListener() {
 				
 				@Override
@@ -284,7 +284,7 @@ public class DetailActivity extends ListActivity {
 				}
 			})
 			.setView(edit)
-			.setPositiveButton("È·¶¨",// ÉèÖÃÈ·¶¨°´Å¥  
+			.setPositiveButton("ç¡®å®š",// è®¾ç½®ç¡®å®šæŒ‰é’®  
                         new DialogInterface.OnClickListener() {  
                             @Override  
                             public void onClick(DialogInterface dialog,  
@@ -293,7 +293,7 @@ public class DetailActivity extends ListActivity {
                             	SharedPreferences sp = DetailActivity.this.getSharedPreferences("telnum", Context.MODE_APPEND);
                             	Editor ed = sp.edit();
                             	if(myApplication.matchNum(temp) == 5 ||myApplication.matchNum(temp) == 4){
-                            		ToastUtil.showToast(DetailActivity.this, "ÄúÊäÈëµÄµç»°ºÅÂëÓĞÎó£¬ÇëÖØĞÂÊäÈë",Toast.LENGTH_SHORT);
+                            		ToastUtil.showToast(DetailActivity.this, "æ‚¨è¾“å…¥çš„ç”µè¯å·ç æœ‰è¯¯ï¼Œè¯·é‡æ–°è¾“å…¥",Toast.LENGTH_SHORT);
                             		edit.setText("");
 							        try {
 					                    Field field = dialog.getClass().getSuperclass().getDeclaredField("mShowing");
@@ -323,7 +323,7 @@ public class DetailActivity extends ListActivity {
 									}
                             }  
                         }) 
-            .setNegativeButton("È¡Ïû",  
+            .setNegativeButton("å–æ¶ˆ",  
                         new DialogInterface.OnClickListener() {  
                             public void onClick(DialogInterface dialog,  
                                     int whichButton) {  
