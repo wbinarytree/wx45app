@@ -29,21 +29,21 @@ import android.view.KeyEvent;
 import android.widget.Toast;
 
 /**
- * WX45APP ¼ÓÔØ¸üĞÂ»¶Ó­Ò³£¬ÓÃÓÚÑÓÊ±¼ì²é¸üĞÂ
+ * WX45APP åŠ è½½æ›´æ–°æ¬¢è¿é¡µï¼Œç”¨äºå»¶æ—¶æ£€æŸ¥æ›´æ–°
  * @author Phoenix WANG
  */
 @SuppressLint("HandlerLeak") public class WelcomeActivity extends Activity{
 
-	private static final String HTTP_URL_VERSION = "http://www.wx45.com/json.php?mod=app&act=checkver&lver=" ;
+	private static final String HTTP_URL_VERSION = "" ;
 	public static final int HTTP_GET_MESSAGE_VERSION_DATA = 0xF3;
    
 	/**
-	 * °æ±¾¸üĞÂÏà¹Ø
-	 * vercode µ±Ç°°æ±¾ĞÅÏ¢
-	 * verName °æ±¾Ãû
-	 * version ·şÎñÆ÷°æ±¾ºÅ
-	 * url ÏÂÔØÁ´½Ó
-	 * filename ÏÂÔØÃû³Æ
+	 * ç‰ˆæœ¬æ›´æ–°ç›¸å…³
+	 * vercode å½“å‰ç‰ˆæœ¬ä¿¡æ¯
+	 * verName ç‰ˆæœ¬å
+	 * version æœåŠ¡å™¨ç‰ˆæœ¬å·
+	 * url ä¸‹è½½é“¾æ¥
+	 * filename ä¸‹è½½åç§°
 	 */
 	private int verCode;
 	private String verName;
@@ -80,7 +80,7 @@ import android.widget.Toast;
 	}
 
 	/**
-	 * ¼ì²é¸üĞÂ·½·¨
+	 * æ£€æŸ¥æ›´æ–°æ–¹æ³•
 	 */
 	private void checkUpdate(){
 		packageName = this.getPackageName();
@@ -93,7 +93,7 @@ import android.widget.Toast;
 	}
 	
     /** 
-     * Role:È¡µÃ³ÌĞòµÄµ±Ç°°æ±¾<BR> 
+     * Role:å–å¾—ç¨‹åºçš„å½“å‰ç‰ˆæœ¬<BR> 
      * Date:2012-4-5<BR> 
      *  
      * @author ZHENSHI)peijiangping 
@@ -113,15 +113,15 @@ import android.widget.Toast;
     }  
     
     /**
-     * ÏÂÔØ¸üĞÂ
+     * ä¸‹è½½æ›´æ–°
      */
     private void doNewVersionUpdate(String nowVersion, String newVersion) {  
         StringBuffer sb = new StringBuffer();  
-        sb.append("µ±Ç°°æ±¾: ");  
+        sb.append("å½“å‰ç‰ˆæœ¬: ");  
         sb.append(nowVersion);  
-        sb.append(" , ·¢ÏÖĞÂ°æ±¾: ");  
+        sb.append(" , å‘ç°æ–°ç‰ˆæœ¬: ");  
         sb.append(newVersion);  
-        sb.append(" , ÊÇ·ñ¸üĞÂ?");  
+        sb.append(" , æ˜¯å¦æ›´æ–°?");  
         Dialog dialog = new AlertDialog.Builder(WelcomeActivity.this)  
         		.setOnKeyListener(new OnKeyListener() {
 					
@@ -140,35 +140,35 @@ import android.widget.Toast;
 			            }  
 					}
 				)
-                .setTitle("Èí¼ş¸üĞÂ")  
+                .setTitle("è½¯ä»¶æ›´æ–°")  
                 .setMessage(sb.toString())  
-                // ÉèÖÃÄÚÈİ  
-                .setPositiveButton("¸üĞÂ",// ÉèÖÃÈ·¶¨°´Å¥  
+                // è®¾ç½®å†…å®¹  
+                .setPositiveButton("æ›´æ–°",// è®¾ç½®ç¡®å®šæŒ‰é’®  
                         new DialogInterface.OnClickListener() {  
                             @Override  
                             public void onClick(DialogInterface dialog,  
                                     int which) {  
                             	mdialog = new ProgressDialog(  
                                 		WelcomeActivity.this);  
-                            	mdialog.setTitle("ÕıÔÚÏÂÔØ");  
-                                mdialog.setMessage("ÇëÉÔºò...");  
+                            	mdialog.setTitle("æ­£åœ¨ä¸‹è½½");  
+                                mdialog.setMessage("è¯·ç¨å€™...");  
                                 mdialog.show();  
-                                new Thread(new DownloadApkThread(mhandler,url,fileName)).start();  //½øÈëÏÂÔØÒ³Ãæ
+                                new Thread(new DownloadApkThread(mhandler,url,fileName)).start();  //è¿›å…¥ä¸‹è½½é¡µé¢
                             }  
                         })  
-                .setNegativeButton("Ôİ²»¸üĞÂ",  
+                .setNegativeButton("æš‚ä¸æ›´æ–°",  
                         new DialogInterface.OnClickListener() {  
                             public void onClick(DialogInterface dialog,  
                                     int whichButton) {  
-                                // µã»÷"È¡Ïû"°´Å¥Ö®ºóÍË³ö³ÌĞò  
+                                // ç‚¹å‡»"å–æ¶ˆ"æŒ‰é’®ä¹‹åé€€å‡ºç¨‹åº  
                             	myApplication.setFlag(myApplication.getFlag() + 1);
                              	myApplication.setLastIgnoreDate(new Date(System.currentTimeMillis()));
                              	myApplication.addDate(new Date(System.currentTimeMillis()));
                                 dialog.cancel(); 
                                 handler.post(r);
                             }  
-                        }).create();// ´´½¨  
-        // ÏÔÊ¾¶Ô»°¿ò  
+                        }).create();// åˆ›å»º  
+        // æ˜¾ç¤ºå¯¹è¯æ¡†  
         dialog.show();  
     }
     
@@ -176,7 +176,7 @@ import android.widget.Toast;
         public void handleMessage(android.os.Message msg) {  
             super.handleMessage(msg);  
             if (msg.what == 1) {    
-                ToastUtil.showToast(mContext, "ÏÂÔØ³É¹¦",Toast.LENGTH_SHORT);
+                ToastUtil.showToast(mContext, "ä¸‹è½½æˆåŠŸ",Toast.LENGTH_SHORT);
                 Intent intent = new Intent(Intent.ACTION_VIEW);  
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 intent.setDataAndType(  
@@ -184,7 +184,7 @@ import android.widget.Toast;
                         "application/vnd.android.package-archive");  
                 startActivity(intent);  
             } else {    
-                ToastUtil.showToast(mContext, "ÏÂÔØÊ§°Ü",Toast.LENGTH_SHORT);
+                ToastUtil.showToast(mContext, "ä¸‹è½½å¤±è´¥",Toast.LENGTH_SHORT);
             }  
             mdialog.cancel();  
         }  
@@ -193,12 +193,12 @@ import android.widget.Toast;
     
     private Handler handler = new Handler(){
 		public void handleMessage(android.os.Message msg) {
-		//¸üĞÂ±êÊ¶£¬½øĞĞ¸üĞÂÌø×ª
+		//æ›´æ–°æ ‡è¯†ï¼Œè¿›è¡Œæ›´æ–°è·³è½¬
     		 switch (msg.what) {
 				case HTTP_GET_MESSAGE_VERSION_DATA:
 					if(msg.obj.toString().equals("")){
 						
-						Log.d("HTTP ERROR","ÍøÂçÊı¾İ»ñÈ¡Ê§°Ü");
+						Log.d("HTTP ERROR","ç½‘ç»œæ•°æ®è·å–å¤±è´¥");
 					}else{
 					parserJsonDataCheckVersion(msg.obj.toString());
 					if ((Double.valueOf(version.getApp_ver()) > Double.valueOf(verName))&&myApplication.checkUpdate()) {  
@@ -225,7 +225,7 @@ import android.widget.Toast;
 		}
     };
     /**
-     * Æô¶¯Æ÷Ïß³Ì
+     * å¯åŠ¨å™¨çº¿ç¨‹
      */
     private Runnable r = new Runnable() {
 		
@@ -238,7 +238,7 @@ import android.widget.Toast;
 		}
     };
 	/**
-	 * ½«°æ±¾ĞÅÏ¢JSON×¼»»³ÉVersion
+	 * å°†ç‰ˆæœ¬ä¿¡æ¯JSONå‡†æ¢æˆVersion
 	 * @param strContent
 	 */
 	private void parserJsonDataCheckVersion(String strContent) {
@@ -252,7 +252,7 @@ import android.widget.Toast;
 			return ;
 		}
 
-		//Êµ¼ÊÕâ¸öÖ»ÓĞÒ»²ãÑ­»·£¬
+		//å®é™…è¿™ä¸ªåªæœ‰ä¸€å±‚å¾ªç¯ï¼Œ
 		
 			JSONObject temp = null;
 			try {
@@ -263,7 +263,7 @@ import android.widget.Toast;
 				version.setApp_name(temp.getString("app_name"));
 				version.setApp_size(temp.getString("app_size"));
 				
-				//Õâ¿éĞèÒªĞŞ¸Ä
+				//è¿™å—éœ€è¦ä¿®æ”¹
 				version.setApp_url("http://www.wx45.com" +temp.getString( "app_url"));
 				version.setApp_file(temp.getString("app_file"));
 				version.setApp_ver(temp.getString("app_ver"));
