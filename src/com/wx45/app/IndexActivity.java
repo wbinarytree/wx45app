@@ -36,7 +36,7 @@ import android.widget.Toast;
 @SuppressLint("HandlerLeak")
 public class IndexActivity extends ListActivity {
 	
-	private final static String url = "http://www.wx45.com/json.php?mod=app&act=gettelno&telno=";
+	private final static String url = "";
     Context mContext = null;
     private ListView mlist;
     private ImageButton imb;
@@ -53,24 +53,24 @@ public class IndexActivity extends ListActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
 
-    	//»ñÈ¡±¾µØÊı¾İ
+    	//è·å–æœ¬åœ°æ•°æ®
     	sp = this.getSharedPreferences("telnum", MODE_PRIVATE);
     	ed = sp.edit();
     	telnum = sp.getString("telnum", "0");
     	ed_temp = new EditText(this);
-    	//ÓÃ»§Î´ÊäÈëºÅÂë
+    	//ç”¨æˆ·æœªè¾“å…¥å·ç 
     	if(telnum.equals("0")){
     		 dialog = new AlertDialog.Builder(IndexActivity.this)
-    										.setMessage("ÏµÍ³¼ì²âµ½Äú»¹Ã»ÓĞ°ó¶¨ÊÖ»úºÅ£¬ÊÇ·ñÏÖÔÚÊäÈë£¿(ÊäÈëÊÖ»úºÅ¿É°ïÖúÎÒÃÇ¸üºÃµÄ·şÎñÄú)")
+    										.setMessage("ç³»ç»Ÿæ£€æµ‹åˆ°æ‚¨è¿˜æ²¡æœ‰ç»‘å®šæ‰‹æœºå·ï¼Œæ˜¯å¦ç°åœ¨è¾“å…¥ï¼Ÿ(è¾“å…¥æ‰‹æœºå·å¯å¸®åŠ©æˆ‘ä»¬æ›´å¥½çš„æœåŠ¡æ‚¨)")
     										.setView(ed_temp)
-    										.setPositiveButton("È·¶¨", new DialogInterface.OnClickListener() {
+    										.setPositiveButton("ç¡®å®š", new DialogInterface.OnClickListener() {
 												
 												@Override
 												public void onClick(DialogInterface arg0, int arg1) {
 													// TODO Auto-generated method stub
 													String temp = ed_temp.getText().toString();
 													if(myApplication.matchNum(temp) == 5 ||myApplication.matchNum(temp) == 4){
-													ToastUtil.showToast(mContext, "ÄúÊäÈëµÄµç»°ºÅÂëÓĞÎó£¬ÇëÖØĞÂÊäÈë",Toast.LENGTH_SHORT);
+													ToastUtil.showToast(mContext, "æ‚¨è¾“å…¥çš„ç”µè¯å·ç æœ‰è¯¯ï¼Œè¯·é‡æ–°è¾“å…¥",Toast.LENGTH_SHORT);
 													ed_temp.setText("");
 											        try {
 									                    Field field = dialog.getClass().getSuperclass().getDeclaredField("mShowing");
@@ -100,7 +100,7 @@ public class IndexActivity extends ListActivity {
 													}
 												}
 											})
-											.setNeutralButton("ÒÔºóÔÙËµ", new DialogInterface.OnClickListener() {
+											.setNeutralButton("ä»¥åå†è¯´", new DialogInterface.OnClickListener() {
 												
 												@Override
 												public void onClick(DialogInterface arg0, int arg1) {
@@ -119,7 +119,7 @@ public class IndexActivity extends ListActivity {
 													
 												}
 											})
-											.setNegativeButton("È¡Ïû", new DialogInterface.OnClickListener() {
+											.setNegativeButton("å–æ¶ˆ", new DialogInterface.OnClickListener() {
 												
 												@Override
 												public void onClick(DialogInterface arg0, int arg1) {
@@ -165,7 +165,7 @@ public class IndexActivity extends ListActivity {
 				 startActivity(intent);
 	    	}else{
 	    		tv_test.setVisibility(View.VISIBLE);
-	    		tv_test.setText("Ã»ÓĞ¼ì²âµ½ÍøÂç£¬Çë´ò¿ªÍøÂçÁ¬½Ó");
+	    		tv_test.setText("æ²¡æœ‰æ£€æµ‹åˆ°ç½‘ç»œï¼Œè¯·æ‰“å¼€ç½‘ç»œè¿æ¥");
 	    	}
 	    }
 	}); 
@@ -200,7 +200,7 @@ public class IndexActivity extends ListActivity {
 
 	
 /***
- * Ê×Ò³¹ã¸æÀ¸ListView
+ * é¦–é¡µå¹¿å‘Šæ ListView
  * @return
  */
 	private List<Map<String, Object>> getData() {
@@ -224,8 +224,8 @@ public class IndexActivity extends ListActivity {
 
     /**
      *
-     * ÖØĞ´BackPress·½·¨
-     * ÉèÖÃ°´Á½´ÎÍË³ö
+     * é‡å†™BackPressæ–¹æ³•
+     * è®¾ç½®æŒ‰ä¸¤æ¬¡é€€å‡º
      */
 	@Override
 	public void onBackPressed() {
@@ -233,7 +233,7 @@ public class IndexActivity extends ListActivity {
 
 		if(back == 0){
 			back++;
-			ToastUtil.showToast(mContext, "ÔÙ°´Ò»´ÎÍË³öÓ¦ÓÃ", Toast.LENGTH_SHORT);
+			ToastUtil.showToast(mContext, "å†æŒ‰ä¸€æ¬¡é€€å‡ºåº”ç”¨", Toast.LENGTH_SHORT);
 			time = System.currentTimeMillis();
 		}
 		else{
