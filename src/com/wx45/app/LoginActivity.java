@@ -28,9 +28,9 @@ import android.widget.Toast;
 	private String username;
 	private String password;
 	
-	private static String url = "http://www.wx45.com/json.php?mod=login&act=login&username=";
-	private static String url_r = "&passwd=";
-	private static String url_r2 = "&checkcode=cc";
+	private static String url = "";
+	private static String url_r = "";
+	private static String url_r2 = "";
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -76,11 +76,11 @@ import android.widget.Toast;
 				int temp = parserJsonDataResult(msg.obj.toString());
 				switch (temp) {
 				case 1:
-					ToastUtil.showToast(LoginActivity.this, "µÇÂ½³É¹¦", Toast.LENGTH_SHORT);
+					ToastUtil.showToast(LoginActivity.this, "ç™»é™†æˆåŠŸ", Toast.LENGTH_SHORT);
 					Log.d("HTTP","HTTP RESULT 1");
 					break;
 				case 2:
-					ToastUtil.showToast(LoginActivity.this, "ÃÜÂë´íÎó", Toast.LENGTH_SHORT);
+					ToastUtil.showToast(LoginActivity.this, "å¯†ç é”™è¯¯", Toast.LENGTH_SHORT);
 					Log.d("HTTP","HTTP RESULT 2");
 					break;
 
@@ -95,7 +95,7 @@ import android.widget.Toast;
 	};
 	
 	/**
-	 * ÉÌÆ·ÏêÏ¸JSON×Ö·û´®×ª³ÉJSONObject
+	 * å•†å“è¯¦ç»†JSONå­—ç¬¦ä¸²è½¬æˆJSONObject
 	 * @param strContent
 	 */
 	private int parserJsonDataResult(String strContent) {
