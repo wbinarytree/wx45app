@@ -41,31 +41,31 @@ import android.widget.TextView.OnEditorActionListener;
 import android.widget.Toast;
 
 /**
- * WX45APP ËÑË÷ÁĞ±íÒ³Ãæ
+ * WX45APP æœç´¢åˆ—è¡¨é¡µé¢
  * @author Phoenix WANG
- * ´ËÒ³Ãæ°üº¬ÇëÇóHTTPÉÌÆ·ËÑË÷ÁĞ±íºÍÉÌÆ·ÏêÇé
+ * æ­¤é¡µé¢åŒ…å«è¯·æ±‚HTTPå•†å“æœç´¢åˆ—è¡¨å’Œå•†å“è¯¦æƒ…
  */
 @SuppressLint("HandlerLeak")
 public class SearchListActivity extends ListActivity {
 
-	//HTTP message±êÊ¶
+	//HTTP messageæ ‡è¯†
 	public static final int HTTP_GET_MESSAGE_SEARCH_DATA = 0xF1;
 	public static final int HTTP_GET_MESSAGE_DETAIL_DATA = 0xF2;
 	public static final int HTTP_GET_MESSAGE_VERSION_DATA = 0xF3;
 	//HTTP URL
-	private static final String HTTP_URL_SEARCH = "http://www.wx45.com/json.php?mod=item&act=search&k=" ;
-	private static final String HTTP_URL_DETAIL = "http://www.wx45.com/json.php?mod=product&act=query&id=" ;
+	private static final String HTTP_URL_SEARCH = "";
+	private static final String HTTP_URL_DETAIL ="";
 
 	
 	/**
-	 * View³ÉÔ±
-	 * tv_netchecker ÏÔÊ¾ÍøÂçĞÅÏ¢
-	 * et_search ËÑË÷¿ò
-	 * btn_search ËÑË÷°´Å¥
-	 * list ÉÌÆ·ÁĞ±í
-	 * myapplication È«¾Ö±äÁ¿¼ÆËã°æ±¾ĞÅÏ¢ 
-	 * context ActivityÉÏÏÂÎÄ
-	 * mdialg½ø¶ÈÌõ´°¿Ú
+	 * Viewæˆå‘˜
+	 * tv_netchecker æ˜¾ç¤ºç½‘ç»œä¿¡æ¯
+	 * et_search æœç´¢æ¡†
+	 * btn_search æœç´¢æŒ‰é’®
+	 * list å•†å“åˆ—è¡¨
+	 * myapplication å…¨å±€å˜é‡è®¡ç®—ç‰ˆæœ¬ä¿¡æ¯ 
+	 * context Activityä¸Šä¸‹æ–‡
+	 * mdialgè¿›åº¦æ¡çª—å£
 	 */
 	private TextView tv_netchecker;
 	private EditText et_search;
@@ -76,11 +76,11 @@ public class SearchListActivity extends ListActivity {
 	private ProgressDialog mdialog;
 	private String goodsId;
 	/**
-	 * ListViewÊı¾İ
+	 * ListViewæ•°æ®
 	 * goodSearchList JsonDataArray
-	 * goodDetailData ÎïÆ·Ï¸½ÚJSON
-	 * goodsTotal ½á¹û×ÜÊı
-	 * ArrayList ´æ´¢ListViewItem
+	 * goodDetailData ç‰©å“ç»†èŠ‚JSON
+	 * goodsTotal ç»“æœæ€»æ•°
+	 * ArrayList å­˜å‚¨ListViewItem
 	 */
 	private  List<GoodsSearchData> goodSearchList;
 	private GoodDetailData goodDetailData;
@@ -90,7 +90,7 @@ public class SearchListActivity extends ListActivity {
 
 	
 	/**
-	 * Ïß³ÌÀà
+	 * çº¿ç¨‹ç±»
 	 */
 	private HttpJsonThread jthread_list;
 	private HttpJsonThread jthread_detail;
@@ -101,11 +101,11 @@ public class SearchListActivity extends ListActivity {
 		super.onCreate(savedInstanceState);
 		this.setContentView(R.layout.activity_search);
 				
-		//³õÊ¼»¯View
+		//åˆå§‹åŒ–View
 		ViewConstruct();
 		
 		/**
-		 * ËÑË÷¿òÉèÖÃ£¬È¡Öµ
+		 * æœç´¢æ¡†è®¾ç½®ï¼Œå–å€¼
 		 */
 		et_search.setImeOptions(EditorInfo.IME_ACTION_SEARCH);
 		et_search.clearFocus();
@@ -127,22 +127,22 @@ public class SearchListActivity extends ListActivity {
 		});
 		
 		/**
-		 * ÉèÖÃËÑË÷°´Å¥
+		 * è®¾ç½®æœç´¢æŒ‰é’®
 		 */		
 		btn_search.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View arg0) {
 				// TODO Auto-generated method stub
-				//Î´´ò¿ªÍøÂç,ÌáÊ¾´ò¿ª
+				//æœªæ‰“å¼€ç½‘ç»œ,æç¤ºæ‰“å¼€
 				if(!myapplication.isNetConnected()){
 					tv_netchecker.setText(R.string.net_tip);
 					tv_netchecker.setVisibility(View.VISIBLE);
 				}
-				//ÍøÂç´ò¿ª£¬Æô¶¯ËÑË÷Ïß³Ì
+				//ç½‘ç»œæ‰“å¼€ï¼Œå¯åŠ¨æœç´¢çº¿ç¨‹
 				else{
-					//¹Ø±ÕÊäÈë·¨´°¿Ú
-					mdialog = ProgressDialog.show(SearchListActivity.this,"", "ÕıÔÚ²éÑ¯");
+					//å…³é—­è¾“å…¥æ³•çª—å£
+					mdialog = ProgressDialog.show(SearchListActivity.this,"", "æ­£åœ¨æŸ¥è¯¢");
 					mdialog.setOnKeyListener(new OnKeyListener() {
 						
 						@Override
@@ -160,10 +160,10 @@ public class SearchListActivity extends ListActivity {
 					tv_netchecker.setVisibility(View.GONE);
 					InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);	
 					imm.hideSoftInputFromWindow(et_search.getWindowToken(), 0);
-					//»ñÈ¡EditTextÊı¾İ£¬²¢½«¿Õ¸ñ×ª»»³É%20
+					//è·å–EditTextæ•°æ®ï¼Œå¹¶å°†ç©ºæ ¼è½¬æ¢æˆ%20
 					String searchstr = et_search.getText().toString();
 					searchstr =  searchstr.replace(" ", "%20");
-					//½¨Á¢Êı¾İÁ¬½ÓÏß³Ì
+					//å»ºç«‹æ•°æ®è¿æ¥çº¿ç¨‹
 					jthread_list = new HttpJsonThread(handler, HTTP_GET_MESSAGE_SEARCH_DATA, HTTP_URL_SEARCH + searchstr);
 					Thread thread = new Thread(new HttpJsonThread(handler, HTTP_GET_MESSAGE_SEARCH_DATA, HTTP_URL_SEARCH + searchstr));
 					thread.start();
@@ -176,23 +176,23 @@ public class SearchListActivity extends ListActivity {
 		});
 		
 		/**
-		 * ÉèÖÃListViewItemListener
+		 * è®¾ç½®ListViewItemListener
 		 */
 		list.setOnItemClickListener(new OnItemClickListener() {
 		    @Override
 		    public void onItemClick(AdapterView<?> adapterView, View view, int position,
 			    long id) {
-		    	//¼ì²âÍøÂç	
+		    	//æ£€æµ‹ç½‘ç»œ	
 		    	if(!myapplication.isNetConnected()){
 					
 		    		tv_netchecker.setVisibility(View.VISIBLE);
-		    		tv_netchecker.setText("Ã»ÓĞ¼ì²âµ½ÍøÂç£¬Çë´ò¿ªÍøÂçÁ¬½Ó");
+		    		tv_netchecker.setText("æ²¡æœ‰æ£€æµ‹åˆ°ç½‘ç»œï¼Œè¯·æ‰“å¼€ç½‘ç»œè¿æ¥");
 				}else{
 					tv_netchecker.setVisibility(View.GONE);
 			    	goodDetailData = new GoodDetailData();
 									
 					goodsId = (String) mData.get(position).get("id");
-					mdialog  = ProgressDialog.show(SearchListActivity.this,"", "ÇëÉÔºó¡­");
+					mdialog  = ProgressDialog.show(SearchListActivity.this,"", "è¯·ç¨åâ€¦");
 					mdialog.setOnKeyListener(new OnKeyListener() {
 						
 						@Override
@@ -217,7 +217,7 @@ public class SearchListActivity extends ListActivity {
 	}
 	
 	/**
-	 * ViewµÄ³õÊ¼»¯
+	 * Viewçš„åˆå§‹åŒ–
 	 */
 	private void ViewConstruct(){
 		tv_netchecker = (TextView) findViewById(R.id.tv_test_iconlist);
@@ -230,7 +230,7 @@ public class SearchListActivity extends ListActivity {
 	    mData = new ArrayList<Map<String,Object>>();
 	}
 	/**
-	 * HandlerÍ¨¹ıwhat±êÊ¶½øĞĞÏÂÒ»²½²Ù×÷
+	 * Handleré€šè¿‡whatæ ‡è¯†è¿›è¡Œä¸‹ä¸€æ­¥æ“ä½œ
 	 */
 	private Handler handler = new Handler(){
 		
@@ -238,26 +238,26 @@ public class SearchListActivity extends ListActivity {
 			
 			switch (msg.what) {
 			
-			// search_data ½øĞĞ½¨Á¢ListView
+			// search_data è¿›è¡Œå»ºç«‹ListView
 			case HTTP_GET_MESSAGE_SEARCH_DATA:
 				parserJsonDataSearchMethod(msg.obj.toString());
 				if(goodsTotal>29){
-					ToastUtil.showToast(context, "ÄúËÑË÷½á¹û´óÓÚ30Ìõ£¬½¨ÒéÄúÊäÈë¸üÏêÏ¸µÄĞÅÏ¢", Toast.LENGTH_SHORT);
+					ToastUtil.showToast(context, "æ‚¨æœç´¢ç»“æœå¤§äº30æ¡ï¼Œå»ºè®®æ‚¨è¾“å…¥æ›´è¯¦ç»†çš„ä¿¡æ¯", Toast.LENGTH_SHORT);
 				}
 				handler.removeMessages(HTTP_GET_MESSAGE_SEARCH_DATA);
 //				handler.removeCallbacks(jthread_list);
 				break;
 			
-			// Detail±êÊ¶ ½øĞĞÒ³ÃæÌø×ª£¬´«Öµ
+			// Detailæ ‡è¯† è¿›è¡Œé¡µé¢è·³è½¬ï¼Œä¼ å€¼
 			case HTTP_GET_MESSAGE_DETAIL_DATA:
 				parserJsonDataProductDetail(msg.obj.toString());
 				mdialog.dismiss();
 				handler.removeMessages(HTTP_GET_MESSAGE_DETAIL_DATA);
 //				handler.removeCallbacks(jthread_detail);
-				//Æô¶¯Intent °ÑJSON½á¹û´«¸øDetailActivity
+				//å¯åŠ¨Intent æŠŠJSONç»“æœä¼ ç»™DetailActivity
 				Intent intent = new Intent();
 				intent.setClass(SearchListActivity.this, DetailActivity.class);
-				//Ìø×ªµ½ÏêÇéÒ³
+				//è·³è½¬åˆ°è¯¦æƒ…é¡µ
 				intent.putExtra("goodDetailData", goodDetailData);
 				intent.putExtra("goodID",goodsId);
 				startActivity(intent);
@@ -271,8 +271,8 @@ public class SearchListActivity extends ListActivity {
 	};
 	
 	/**
-	 * String×Ö·û´®×ª³ÉJSONObj
-	 * @param strContent JSON×Ö·û´®
+	 * Stringå­—ç¬¦ä¸²è½¬æˆJSONObj
+	 * @param strContent JSONå­—ç¬¦ä¸²
 	 */
 	
 	
@@ -315,7 +315,7 @@ public class SearchListActivity extends ListActivity {
 		
 	}
 	/**
-	 * ÉÌÆ·ÏêÏ¸JSON×Ö·û´®×ª³ÉJSONObject
+	 * å•†å“è¯¦ç»†JSONå­—ç¬¦ä¸²è½¬æˆJSONObject
 	 * @param strContent
 	 */
 	private void parserJsonDataProductDetail(String strContent) {
@@ -354,7 +354,7 @@ public class SearchListActivity extends ListActivity {
 
 	
 	/**
-	 * Éú³ÉListView
+	 * ç”ŸæˆListView
 	 */
 	private void filledListView(){
 		
@@ -371,7 +371,7 @@ public class SearchListActivity extends ListActivity {
 		    	item.put("image", R.drawable.good_h_new);
 		    else
 		    	item.put("image", R.drawable.good_l);
-		    item.put("text","£¤" + goodSearchList.get(index).getHashData(GoodsSearchData.KEY_GOODS_PRICE));
+		    item.put("text","ï¿¥" + goodSearchList.get(index).getHashData(GoodsSearchData.KEY_GOODS_PRICE));
 		    mData.add(item); 
 			
 		}
